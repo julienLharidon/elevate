@@ -374,6 +374,20 @@ export class GlobalSettingsService {
           labels: ["All"]
         },
         {
+          key: "feedHideCommuteActivities",
+          type: "checkbox",
+          title: "Hide commute activities.",
+          labels: ["All"],
+          enableSubOption: ["feedHideCommuteActivitiesUnderDistance"]
+        },
+        {
+          key: "feedHideCommuteActivitiesUnderDistance",
+          type: "number",
+          title: "Hide commute activities under distance.",
+          labels: ["All"],
+          min: 0
+        },
+        {
           key: "feedHideVirtualRides",
           type: "checkbox",
           title: "Hide virtual rides.",

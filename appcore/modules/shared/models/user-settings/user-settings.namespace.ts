@@ -84,6 +84,8 @@ export namespace UserSettings {
       feedHideCreatedRoutes: false,
       feedHidePosts: false,
       feedHideSuggestedAthletes: false,
+      feedHideCommuteActivities: false,
+      feedHideCommuteActivitiesUnderDistance: 0,
       feedHideVirtualRides: false,
       feedHideRideActivitiesUnderDistance: 0,
       feedHideRunActivitiesUnderDistance: 0,
@@ -127,6 +129,8 @@ export namespace UserSettings {
     public feedHideCreatedRoutes: boolean;
     public feedHideSuggestedAthletes: boolean;
     public feedHidePosts: boolean;
+    public feedHideCommuteActivities: boolean;
+    public feedHideCommuteActivitiesUnderDistance: number;
     public feedHideVirtualRides: boolean;
     public feedHideRideActivitiesUnderDistance: number;
     public feedHideRunActivitiesUnderDistance: number;

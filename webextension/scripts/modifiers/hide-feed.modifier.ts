@@ -46,10 +46,12 @@ export class HideFeedModifier extends AbstractModifier {
       }
 
       if (
+        this.userSettings.feedHideCommuteActivities ||
         this.userSettings.feedHideVirtualRides ||
         this.userSettings.feedHideRideActivitiesUnderDistance > 0 ||
         this.userSettings.feedHideRunActivitiesUnderDistance > 0
       ) {
+        const minCommuteDistanceToHide: number = this.userSettings.feedHideCommuteActivitiesUnderDistance;
         const minRideDistanceToHide: number = this.userSettings.feedHideRideActivitiesUnderDistance;
         const minRunDistanceToHide: number = this.userSettings.feedHideRunActivitiesUnderDistance;
 
@@ -66,6 +68,18 @@ export class HideFeedModifier extends AbstractModifier {
           });
 
           const distance: number = parseFloat($(distanceElement).parent().text().replace(",", "."));
+          const isCommute = $(element).find(".icon-commute").length > 0;
+
+          // Remove commute activities
+          if (this.userSettings.feedHideCommuteActivities && isCommute) {
+            if (minCommuteDistanceToHide > 0) {
+              if (distance && distance < minCommuteDistanceToHide) {
+                $(element).remove();
+              }
+            } else {
+              $(element).remove();
+            }
+          }
 
           // Remove virtual rides
           if (this.userSettings.feedHideVirtualRides && activityType === HideFeedModifier.VIRTUAL_RIDE) {
