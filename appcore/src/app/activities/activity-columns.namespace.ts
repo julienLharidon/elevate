@@ -1013,6 +1013,26 @@ export namespace ActivityColumns {
       ),
       new NumberColumn(
         Category.ELEVATION,
+        ["stats", "elevation", "max"],
+        Definition.ELEVATION_SYSTEM_UNITS,
+        "Max Elevation",
+        Print.number,
+        0,
+        1,
+        Constant.METER_TO_FEET_FACTOR
+      ),
+      new NumberColumn(
+        Category.ELEVATION,
+        ["stats", "elevation", "min"],
+        Definition.ELEVATION_SYSTEM_UNITS,
+        "Min Elevation",
+        Print.number,
+        0,
+        1,
+        Constant.METER_TO_FEET_FACTOR
+      ),
+      new NumberColumn(
+        Category.ELEVATION,
         ["stats", "elevation", "descent"],
         Definition.ELEVATION_SYSTEM_UNITS,
         "Elevation Descent",
