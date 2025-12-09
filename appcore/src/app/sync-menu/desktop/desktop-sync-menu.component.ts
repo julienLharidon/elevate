@@ -112,6 +112,7 @@ export class DesktopSyncMenuComponent extends SyncMenuComponent implements OnIni
       text: "Restore profile",
       action: () => this.onRestore()
     });
+
   }
 
   protected updateSyncStatus(): void {
@@ -189,4 +190,5 @@ export class DesktopSyncMenuComponent extends SyncMenuComponent implements OnIni
       maxWidth: DesktopManualActivityDialogComponent.MAX_WIDTH
     });
   }
+
 }

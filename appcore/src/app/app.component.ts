@@ -40,6 +40,7 @@ import { UpdateBarDirective } from "./update-bar/update-bar.directive";
 import { OPEN_RESOURCE_RESOLVER, OpenResourceResolver } from "./shared/services/links-opener/open-resource-resolver";
 import { AppPackage } from "@elevate/shared/tools/app-package";
 import { BuildTarget } from "@elevate/shared/enums/build-target.enum";
+import { GoogleDriveService } from "./shared/services/google-drive/google-drive.service";
 
 @Component({
   selector: "app-root",
@@ -103,7 +104,8 @@ export class AppComponent implements OnInit, OnDestroy {
     @Inject(RECALCULATE_ACTIVITIES_BAR_COMPONENT)
     private readonly recalculateActivitiesBarComponentType: Type<RecalculateActivitiesBarComponent>,
     @Inject(SYNC_MENU_COMPONENT) private readonly syncMenuComponentType: Type<SyncMenuComponent>,
-    @Inject(APP_MORE_MENU_COMPONENT) private readonly appMoreMenuComponentType: Type<AppMoreMenuComponent>
+    @Inject(APP_MORE_MENU_COMPONENT) private readonly appMoreMenuComponentType: Type<AppMoreMenuComponent>,
+    @Inject(GoogleDriveService) private readonly googleDriveService: GoogleDriveService
   ) {
     this.currentRoute = this.router.url;
     this.showDebugRibbon = environment.showDebugRibbon;
@@ -243,5 +245,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public onOpenWebSite(): void {
     this.openResourceResolver.openLink(AppPackage.getElevateWebSite());
+  }
+
+  public onPushToGoogleDrive(): void {
+    this.googleDriveService.uploadActivities();
   }
 }

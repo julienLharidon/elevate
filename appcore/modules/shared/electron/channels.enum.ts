@@ -50,5 +50,10 @@ export enum Channel {
   // Others
   ipcStorage = "ipcStorage",
   stravaLink = "stravaLink",
-  runtimeInfo = "runtimeInfo"
+  runtimeInfo = "runtimeInfo",
+
+  // Google
+  GET_GOOGLE_CREDENTIALS = "GET_GOOGLE_CREDENTIALS",
+  SET_GOOGLE_CREDENTIALS = "SET_GOOGLE_CREDENTIALS",
+  UPLOAD_TO_GOOGLE_SHEETS = "UPLOAD_TO_GOOGLE_SHEETS"
 }

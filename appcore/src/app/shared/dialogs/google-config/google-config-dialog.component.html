@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Google Drive Configuration</h1>
+<div mat-dialog-content>
+  <p>
+    Please provide the path to your Google Service Account JSON key file and the ID of the Google Sheet you want to upload the data to.
+  </p>
+  <p>
+    For instructions on how to create a service account and find your Sheet ID, please see the
+    <a href="https://developers.google.com/workspace/guides/create-credentials#create_credentials_for_a_service_account" target="_blank">Google Cloud documentation</a>.
+  </p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.keyFilePath" placeholder="Service Account Key File Path">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.sheetId" placeholder="Google Sheet ID">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>OK</button>
+</div>

@@ -23,6 +23,7 @@ import { ReleaseNoteService } from "../releases-notes/release-note.service";
 import { NewInstalledVersionNoticeDialogComponent } from "./services/versions/new-installed-version-notice-dialog.component";
 import { TargetModule } from "./modules/target/target.module";
 import { ComponentsFactoryService } from "./services/components-factory.service";
+import { GoogleConfigDialogComponent } from "./dialogs/google-config/google-config-dialog.component";
 
 @NgModule({
   imports: [CoreModule, BrowserModule, BrowserAnimationsModule, TargetModule],
@@ -35,7 +36,8 @@ import { ComponentsFactoryService } from "./services/components-factory.service"
     OptionHelperDialogComponent,
     AboutDialogComponent,
     ActivitiesSettingsLacksDialogComponent,
-    NewInstalledVersionNoticeDialogComponent
+    NewInstalledVersionNoticeDialogComponent,
+    GoogleConfigDialogComponent
   ],
   providers: [
     ComponentsFactoryService,
