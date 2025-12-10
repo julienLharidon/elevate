@@ -148,17 +148,15 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
       </table>
     </div>
+    <button (click)="onPushToGoogleDrive()" color="primary" mat-stroked-button
+            matTooltip="Push to Google Drive">
+      <mat-icon fontSet="material-icons-outlined">cloud_upload</mat-icon>
+    </button>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div>
-        <button (click)="onSpreadSheetExport()" color="primary" mat-stroked-button
-                matTooltip="Download spreadsheet export">
-          <mat-icon fontSet="material-icons-outlined">vertical_align_bottom</mat-icon>
-        </button>
-        <button (click)="onPushToGoogleDrive()" color="primary" mat-stroked-button
-                matTooltip="Push to Google Drive">
-          <mat-icon fontSet="material-icons-outlined">cloud_upload</mat-icon>
-        </button>
-      </div>
+      <button (click)="onSpreadSheetExport()" color="primary" mat-stroked-button
+              matTooltip="Download spreadsheet export">
+        <mat-icon fontSet="material-icons-outlined">vertical_align_bottom</mat-icon>
+      </button>
       <mat-paginator (page)="onPageEvent($event)"
                      [pageSizeOptions]="[5, 10, 15, 30, 50]"
                      [pageSize]="10" showFirstLastButtons>
