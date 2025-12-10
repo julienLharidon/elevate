@@ -31,6 +31,7 @@ import { UserSettings } from "@elevate/shared/models/user-settings/user-settings
 import NumberColumn = ActivityColumns.NumberColumn;
 import BaseUserSettings = UserSettings.BaseUserSettings;
 import { FieldInfo, Parser as Json2CsvParser } from "json2csv";
+import { GoogleDriveService } from "../shared/services/google-drive/google-drive.service";
 
 class Preferences {
   constructor(
@@ -89,7 +90,8 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
     @Inject(OPEN_RESOURCE_RESOLVER) private readonly openResourceResolver: OpenResourceResolver,
     @Inject(MatSnackBar) private readonly snackBar: MatSnackBar,
     @Inject(MatDialog) private readonly dialog: MatDialog,
-    @Inject(LoggerService) private readonly logger: LoggerService
+    @Inject(LoggerService) private readonly logger: LoggerService,
+    @Inject(GoogleDriveService) private readonly googleDriveService: GoogleDriveService
   ) {
     this.hasActivities = null; // Can be null: don't know yet true/false status
     this.hasEmptyResults = null; // Can be null: don't know yet true/false status
@@ -585,5 +587,9 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.historyChangesSub.unsubscribe();
+  }
+
+  public onPushToGoogleDrive(): void {
+    this.googleDriveService.uploadActivities();
   }
 }

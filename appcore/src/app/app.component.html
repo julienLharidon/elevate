@@ -34,10 +34,6 @@
 
       <ng-container appSyncMenu></ng-container>
 
-      <button (click)="onPushToGoogleDrive()" id="google-drive-push" mat-icon-button>
-        <mat-icon fontSet="material-icons-outlined">cloud_upload</mat-icon>
-      </button>
-
       <button (click)="onThemeToggle()" id="theme-toggle" mat-icon-button>
         <mat-icon *ngIf="appService.currentTheme === Theme.LIGHT" fontSet="material-icons-outlined"
           style="transform: rotate(-35deg) scaleX(-1);">
