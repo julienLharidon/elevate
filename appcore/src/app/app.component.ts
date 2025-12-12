@@ -244,5 +244,4 @@ export class AppComponent implements OnInit, OnDestroy {
   public onOpenWebSite(): void {
     this.openResourceResolver.openLink(AppPackage.getElevateWebSite());
   }
-
 }

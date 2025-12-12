@@ -3,7 +3,7 @@ import { Channel } from "@elevate/shared/electron/channels.enum";
 import { IpcListener } from "./ipc-listener.interface";
 import Store from 'electron-store';
 import { google } from 'googleapis';
-import { GoogleServiceAccountCredentials } from "../../../../appcore/src/app/shared/services/google-drive/google-config.service";
+import { GoogleServiceAccountCredentials } from "@elevate/shared/models/google-service-account-credentials.model";
 import { Activity } from "@elevate/shared/models/sync/activity.model";
 
 export class IpcGoogleSheetsListener implements IpcListener {
@@ -28,7 +28,7 @@ export class IpcGoogleSheetsListener implements IpcListener {
 
             const sheets = google.sheets({ version: 'v4', auth });
 
-            const header = Object.keys(activities[0]);
+            const header = [...new Set(activities.flatMap(activity => Object.keys(activity)))];
             const values = activities.map(activity => header.map(key => activity[key]));
             const resource = {
                 values: [header, ...values],
@@ -40,7 +40,7 @@ export class IpcGoogleSheetsListener implements IpcListener {
                     range: 'A1:ZZ',
                 });
 
-                await sheets.spreadsheets.values.append({
+                await sheets.spreadsheets.values.update({
                     spreadsheetId: credentials.sheetId,
                     range: 'A1',
                     valueInputOption: 'RAW',

@@ -2,7 +2,8 @@ import { IpcTunnelService } from "@elevate/shared/electron/ipc-tunnel";
 import { Channel } from "@elevate/shared/electron/channels.enum";
 import { IpcListener } from "./ipc-listener.interface";
 import Store from 'electron-store';
-import { GoogleServiceAccountCredentials } from "../../../../appcore/src/app/shared/services/google-drive/google-config.service";
+import { GoogleServiceAccountCredentials } from "@elevate/shared/models/google-service-account-credentials.model";
+import { dialog } from "electron";
 
 export class IpcGoogleCredentialsListener implements IpcListener {
 
@@ -15,6 +16,16 @@ export class IpcGoogleCredentialsListener implements IpcListener {
 
         ipcTunnelService.on<GoogleServiceAccountCredentials, void>(Channel.SET_GOOGLE_CREDENTIALS, (credentials: GoogleServiceAccountCredentials) => {
             this.store.set('googleServiceAccountCredentials', credentials);
+        });
+
+        ipcTunnelService.on<void, string>(Channel.OPEN_FILE_DIALOG, () => {
+            const result = dialog.showOpenDialogSync({
+                properties: ['openFile'],
+                filters: [
+                    { name: 'JSON', extensions: ['json'] }
+                ]
+            });
+            return result ? result[0] : null;
         });
     }
 }
