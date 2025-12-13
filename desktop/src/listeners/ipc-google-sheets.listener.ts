@@ -18,7 +18,8 @@ export class IpcGoogleSheetsListener implements IpcListener {
 
             const credentials = this.store.get('googleServiceAccountCredentials') as GoogleServiceAccountCredentials;
             if (!credentials || !credentials.keyFilePath || !credentials.sheetId) {
-                return Promise.reject('Google Sheets credentials not configured.');
+                console.error('Google Sheets credentials not configured.');
+                return;
             }
 
             const auth = new google.auth.GoogleAuth({
@@ -48,7 +49,6 @@ export class IpcGoogleSheetsListener implements IpcListener {
                 });
             } catch (err) {
                 console.error(err);
-                return Promise.reject(err);
             }
         });
     }

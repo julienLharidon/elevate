@@ -17,6 +17,7 @@ const plugins = [
   }),
   resolve({ preferBuiltins: true }),
   commonjs({
+    include: ["node_modules/google-auth-library/**", "node_modules/googleapis/**"],
     ignore: ["assert", "net"],
     sourceMap: false
   }),
