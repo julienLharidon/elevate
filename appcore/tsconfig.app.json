@@ -37,6 +37,9 @@
       ],
       "@elevate/shared/tools/*": [
         "./modules/shared/tools/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
       ]
     }
   },

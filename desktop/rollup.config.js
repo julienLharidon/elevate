@@ -13,11 +13,10 @@ console.info('Building desktop bundle in "' + (IS_ELECTRON_PROD ? "production" :
 const plugins = [
   typescript({
     tsconfig: "./tsconfig.json",
-    include: ["./src/**/*.ts", "!./src/**/*.spec.ts", "./../appcore/modules/**/*.ts"]
+    include: ["./src/**/*.ts", "!./src/**/*.spec.ts", "./../appcore/src/app/shared/dialogs/google-sheets-config-dialog/google-sheets-config-dialog-data.model.ts", "./../appcore/modules/**/*.ts"]
   }),
   resolve({ preferBuiltins: true }),
   commonjs({
-    include: ["node_modules/google-auth-library/**", "node_modules/googleapis/**"],
     ignore: ["assert", "net"],
     sourceMap: false
   }),
@@ -55,7 +54,9 @@ module.exports = [
       "stream",
       "zlib",
       "dgram",
-      "buffer"
+      "buffer",
+      "electron-store",
+      "googleapis"
     ],
     plugins: plugins
   },

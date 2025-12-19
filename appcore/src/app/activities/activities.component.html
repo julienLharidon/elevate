@@ -150,13 +150,17 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div>
-        <button (click)="onPushToGoogleDrive()" color="primary" mat-stroked-button
-                matTooltip="Push to Google Drive">
-          <mat-icon fontSet="material-icons-outlined">cloud_upload</mat-icon>
-        </button>
         <button (click)="onSpreadSheetExport()" color="primary" mat-stroked-button
                 matTooltip="Download spreadsheet export">
           <mat-icon fontSet="material-icons-outlined">vertical_align_bottom</mat-icon>
+        </button>
+        <button (click)="pushToGoogleDrive()" color="primary" mat-stroked-button
+                matTooltip="Push to Google Drive">
+          <mat-icon fontSet="material-icons-outlined">cloud_upload</mat-icon>
+        </button>
+        <button (click)="openGoogleSheetsConfig()" color="primary" mat-stroked-button
+                matTooltip="Configure Google Drive">
+          <mat-icon fontSet="material-icons-outlined">settings</mat-icon>
         </button>
       </div>
       <mat-paginator (page)="onPageEvent($event)"

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Google Sheets Configuration</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Spreadsheet ID</mat-label>
+    <input matInput [(ngModel)]="data.spreadsheetId">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sheet Name</mat-label>
+    <input matInput [(ngModel)]="data.sheetName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Credentials Path</mat-label>
+    <input matInput [(ngModel)]="data.credentialsPath">
+    <button mat-icon-button matSuffix (click)="browse()">
+      <mat-icon>folder_open</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>

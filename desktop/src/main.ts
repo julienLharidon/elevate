@@ -38,8 +38,8 @@ import { UserScreen } from "./tools/user-screen";
 import { RuntimeInfoProviderToken } from "./runtime-info/runtime-info.provider";
 import { RuntimeInfoService } from "./runtime-info/runtime-Info.service";
 import { IpcComputeSplitsListener } from "./listeners/ipc-compute-splits.listener";
-import { IpcGoogleCredentialsListener } from "./listeners/ipc-google-credentials.listener";
-import { IpcGoogleSheetsListener } from "./listeners/ipc-google-sheets.listener";
+import { GoogleSheetsListener } from "./listeners/google-sheets.listener";
+import { GoogleSheetsConfigListener } from './listeners/google-sheets-config.listener';
 import { platform } from "os";
 import { AppPackage } from "@elevate/shared/tools/app-package";
 import Menu = Electron.Menu;
@@ -62,11 +62,11 @@ class Main {
     @inject(IpcStravaLinkListener) private readonly ipcStravaLinkListener: IpcStravaLinkListener,
     @inject(IpcProfileBackupListener) private readonly ipcProfileBackupListener: IpcProfileBackupListener,
     @inject(IpcSharedStorageListener) private readonly ipcSharedStorageListener: IpcSharedStorageListener,
-    @inject(IpcGoogleCredentialsListener) private readonly ipcGoogleCredentialsListener: IpcGoogleCredentialsListener,
-    @inject(IpcGoogleSheetsListener) private readonly ipcGoogleSheetsListener: IpcGoogleSheetsListener,
     @inject(IpcStorageService) private readonly ipcStorage: IpcStorageService,
     @inject(HttpClient) private readonly httpClient: HttpClient,
-    @inject(Logger) private readonly logger: Logger
+    @inject(Logger) private readonly logger: Logger,
+    @inject(GoogleSheetsListener) private readonly googleSheetsListener: GoogleSheetsListener,
+    @inject(GoogleSheetsConfigListener) private readonly googleSheetsConfigListener: GoogleSheetsConfigListener
   ) {}
 
   private static readonly DEFAULT_SCREEN_RATIO: number = 0.95;
@@ -476,12 +476,11 @@ class Main {
 
     // Listen for check remote update requests
     this.updateHandler.startListening(this.ipcTunnelService);
+    // Listen for google sheets upload requests
+    this.googleSheetsListener.startListening(this.ipcTunnelService);
 
-    // Listen for google credentials requests
-    this.ipcGoogleCredentialsListener.startListening(this.ipcTunnelService);
-
-    // Listen for google sheets requests
-    this.ipcGoogleSheetsListener.startListening(this.ipcTunnelService);
+    // Listen for google sheets config requests
+    this.googleSheetsConfigListener.startListening(this.ipcTunnelService);
   }
 
   private getMenuTemplate(): any[] {
