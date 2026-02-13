@@ -31,6 +31,9 @@ import { UserSettings } from "@elevate/shared/models/user-settings/user-settings
 import NumberColumn = ActivityColumns.NumberColumn;
 import BaseUserSettings = UserSettings.BaseUserSettings;
 import { FieldInfo, Parser as Json2CsvParser } from "json2csv";
+import { GoogleConfigService } from '@app/services/google-config.service';
+import { GoogleSheetsConfigDialogComponent } from '../shared/dialogs/google-sheets-config-dialog/google-sheets-config-dialog.component';
+import { GoogleSheetsConfigDialogDataModel } from '../shared/dialogs/google-sheets-config-dialog/google-sheets-config-dialog-data.model';
 
 class Preferences {
   constructor(
@@ -89,7 +92,8 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
     @Inject(OPEN_RESOURCE_RESOLVER) private readonly openResourceResolver: OpenResourceResolver,
     @Inject(MatSnackBar) private readonly snackBar: MatSnackBar,
     @Inject(MatDialog) private readonly dialog: MatDialog,
-    @Inject(LoggerService) private readonly logger: LoggerService
+    @Inject(LoggerService) private readonly logger: LoggerService,
+    @Inject(GoogleConfigService) private readonly googleConfigService: GoogleConfigService
   ) {
     this.hasActivities = null; // Can be null: don't know yet true/false status
     this.hasEmptyResults = null; // Can be null: don't know yet true/false status
@@ -585,5 +589,73 @@ export class ActivitiesComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.historyChangesSub.unsubscribe();
+  }
+
+  public openGoogleSheetsConfig(): void {
+    this.googleConfigService.openConfigDialog();
+  }
+
+  public pushToGoogleDrive(): void {
+    try {
+      const data = this.dataSource.filteredData.map(activity => {
+        return this.selectedColumns.map(column => {
+          let cellValue;
+
+          switch (column.type) {
+            case ActivityColumns.ColumnType.DATE:
+              cellValue = moment(activity.startTime).toISOString();
+              break;
+
+            case ActivityColumns.ColumnType.TEXT:
+              cellValue = column.print(activity, column.path);
+              break;
+
+            case ActivityColumns.ColumnType.ACTIVITY_LINK:
+              cellValue = column.print(activity, column.path);
+              break;
+
+            case ActivityColumns.ColumnType.NUMBER:
+              const numberColumn = column as NumberColumn;
+              cellValue = numberColumn.print(
+                activity,
+                null,
+                numberColumn.precision,
+                numberColumn.factor,
+                this.isImperial,
+                numberColumn.imperialFactor,
+                numberColumn.path
+              );
+              break;
+
+            case ActivityColumns.ColumnType.ATHLETE_SETTINGS:
+              cellValue = ActivitiesComponent.printAthleteSettings(activity, this.isImperial);
+              break;
+
+            default:
+              cellValue = "";
+              break;
+          }
+
+          return cellValue;
+        });
+      });
+      this.googleConfigService.getConfig().then(config => {
+        if (!config || !config.spreadsheetId) {
+          this.snackBar.open('Please configure the spreadsheet ID first', 'Close');
+          return;
+        }
+        this.googleConfigService.uploadData({
+          spreadsheetId: config.spreadsheetId,
+          sheetName: config.sheetName,
+          data: data
+        }).then(() => {
+          this.snackBar.open('Data uploaded successfully', 'Close');
+        }).catch((error) => {
+          this.snackBar.open(error, 'Close');
+        });
+      });
+    } catch (err) {
+      this.logger.error(err);
+    }
   }
 }

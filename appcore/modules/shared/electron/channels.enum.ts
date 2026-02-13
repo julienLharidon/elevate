@@ -50,5 +50,8 @@ export enum Channel {
   // Others
   ipcStorage = "ipcStorage",
   stravaLink = "stravaLink",
-  runtimeInfo = "runtimeInfo"
+  runtimeInfo = "runtimeInfo",
+  uploadGoogleSheets = "upload-google-sheets",
+  getGoogleSheetsConfig = "get-google-sheets-config",
+  setGoogleSheetsConfig = "set-google-sheets-config"
 }
