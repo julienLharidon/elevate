@@ -6,6 +6,7 @@ import { SwimFtpHelperComponent } from "./swim-ftp-helper/swim-ftp-helper.compon
 import { AthleteSettings } from "@elevate/shared/models/athlete/athlete-settings/athlete-settings.model";
 import { MeasureSystem } from "@elevate/shared/enums/measure-system.enum";
 import { Constant } from "@elevate/shared/constants/constant";
+import { PropertiesDao } from "../../../shared/dao/properties/properties.dao";
 
 @Component({
   selector: "app-athlete-settings-form",
@@ -37,14 +38,20 @@ export class AthleteSettingsFormComponent implements OnInit {
   public compliantAthleteSettingsModel: AthleteSettings;
 
   public swimFtp100m: string;
+  public geminiApiKey: string;
 
   public isSwimFtpCalculatorEnabled = false;
 
-  constructor(@Inject(MatSnackBar) private readonly snackBar: MatSnackBar) {}
+  constructor(
+    @Inject(MatSnackBar) private readonly snackBar: MatSnackBar,
+    @Inject(PropertiesDao) private readonly propertiesDao: PropertiesDao
+  ) {}
 
-  public ngOnInit(): void {
+  public async ngOnInit() {
     this.markCurrentSettingsAsCompliant();
     this.swimFtp100m = SwimFtpHelperComponent.convertSwimSpeedToPace(this.athleteSettingsModel.swimFtp);
+    const props: any = await this.propertiesDao.findOne();
+    this.geminiApiKey = props.geminiApiKey;
   }
 
   public isPropertyCompliant(property: string, canBeNull?: boolean): boolean {
@@ -131,6 +138,13 @@ export class AthleteSettingsFormComponent implements OnInit {
       this.swimFtp100m = SwimFtpHelperComponent.convertSwimSpeedToPace(this.athleteSettingsModel.swimFtp); // Update min/100m field
     }
     this.onValidateChange(AthleteSettingsFormComponent.DATED_ATHLETE_SETTING_KEY_SWIMMING_FTP, true);
+  }
+
+  public async onGeminiApiKeyChanged() {
+    const props: any = await this.propertiesDao.findOne();
+    props.geminiApiKey = this.geminiApiKey;
+    await this.propertiesDao.update(props);
+    this.snackBar.open("Gemini API Key saved", "Close", { duration: 2000 });
   }
 
   public onSwimFtp100mChanged() {

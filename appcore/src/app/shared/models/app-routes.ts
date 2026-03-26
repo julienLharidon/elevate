@@ -11,6 +11,7 @@ export class AppRoutes {
   public static readonly report: string = "report";
   public static readonly advancedMenu: string = "advancedMenu";
   public static readonly help: string = "help";
+  public static readonly aiCoach: string = "aiCoach";
 
   // Desktop
   public static readonly dashboard: string = "dashboard";

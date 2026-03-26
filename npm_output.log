@@ -1,0 +1,38 @@
+Warning: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disable-host-check" if that's the
+case.
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names                                    |  Raw Size
+main.js               | main                                     |   9.74 MB |
+polyfills.js          | polyfills                                |   1.18 MB |
+scripts.js            | scripts                                  | 795.59 kB |
+styles.css, styles.js | styles                                   | 462.11 kB |
+runtime.js            | runtime                                  |  12.92 kB |
+
+| Initial Total                            |  12.16 MB
+
+Lazy Chunk Files      | Names                                    |  Raw Size
+447.js                | fitness-trend-fitness-trend-module       |   2.42 MB |
+213.js                | fitness-trend-fitness-trend-module       | 306.72 kB |
+51.js                 | year-progress-year-progress-module       | 280.42 kB |
+540.js                | activities-activities-module             | 217.62 kB |
+933.js                | athlete-settings-athlete-settings-module | 177.35 kB |
+389.js                | activities-activities-module             | 110.86 kB |
+125.js                | zones-settings-zones-settings-module     |  87.85 kB |
+11.js                 | fitness-trend-fitness-trend-module       |  36.14 kB |
+114.js                | web                                      |  25.24 kB |
+575.js                | web                                      |  23.82 kB |
+797.js                | ai-coach-ai-coach-module                 |  20.05 kB |
+
+Build at: 2026-03-26T07:31:25.206Z - Hash: d86d9e25e717f13f - Time: 28754ms
+
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.

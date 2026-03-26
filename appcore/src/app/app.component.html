@@ -1,7 +1,7 @@
-<div class="mat-body-1" id="app-container">
+<div class="mat-body-1" id="app-container" [class.mobile-layout]="buildTarget === BuildTarget.MOBILE">
   <ng-container appTopBar></ng-container>
   <mat-sidenav-container>
-    <mat-sidenav (closed)="onSideNavClosed()" (opened)="onSideNavOpened()" mode="side">
+    <mat-sidenav #sideNav (closed)="onSideNavClosed()" (opened)="onSideNavOpened()" [mode]="buildTarget === BuildTarget.MOBILE ? 'over' : 'side'">
       <mat-nav-list>
         <mat-list-item (click)="openResourceResolver.openLink('https://www.strava.com/dashboard')"
           *ngIf="(buildTarget === BuildTarget.EXTENSION)">
@@ -9,7 +9,7 @@
           <span class="mat-body-1">Strava Dashboard</span>
         </mat-list-item>
         <mat-list-item *ngFor="let item of mainMenuItems" routerLink="/{{item.routerLink}}"
-          routerLinkActive="{{item.routerLinkActive}}">
+          routerLinkActive="{{item.routerLinkActive}}" (click)="buildTarget === BuildTarget.MOBILE && sideNav.close()">
           <mat-icon *ngIf="item.iconClass" fontSet="material-icons-outlined"
             [color]="item.iconClass">{{item.icon}}</mat-icon>
           <mat-icon *ngIf="!item.iconClass" fontSet="material-icons-outlined">{{item.icon}}</mat-icon>
@@ -46,13 +46,20 @@
       <ng-container appMoreMenu></ng-container>
 
     </mat-toolbar>
-    <div>
+    <div id="main-content">
       <ng-container appUpdateBar></ng-container>
       <ng-container appSyncBar></ng-container>
       <ng-container appRecalculateActivitiesBar></ng-container>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-container>
+
+  <div *ngIf="buildTarget === BuildTarget.MOBILE" id="bottom-nav">
+    <button *ngFor="let item of mainMenuItems.slice(0, 4)" routerLink="/{{item.routerLink}}" routerLinkActive="active-link" class="nav-item">
+      <mat-icon fontSet="material-icons-outlined">{{item.icon}}</mat-icon>
+      <span>{{item.name}}</span>
+    </button>
+  </div>
   <div *ngIf="showDebugRibbon" class="primary-note">
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div><strong>{{ currentRoute }}</strong></div>
