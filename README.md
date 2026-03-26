@@ -45,6 +45,7 @@
   - [Publish to github releases](#publish-to-github-releases)
   - [Use custom browser for unit-testing (web-extension only)](#use-custom-browser-for-unit-testing-web-extension-only)
   - [Desktop: Debug the calculated watts against real power](#desktop-debug-the-calculated-watts-against-real-power)
+- [Mobile App (Android & iOS)](#mobile-app-android--ios)
 
 <!-- tocstop -->
 
@@ -512,3 +513,33 @@ module.exports = {
 
 - Create a new local storage key named `DEBUG_EST_VS_REAL_WATTS` and set it to `true`
 - Reload application and go to activities performed with a real power meter (cycling or running)
+
+## Mobile App (Android & iOS)
+
+The app is now compatible with Android and iOS via Capacitor.
+
+### Build Instructions
+
+1.  **Build the Angular Application**:
+    ```bash
+    cd appcore
+    npm run build:mobile
+    ```
+
+2.  **Sync with Capacitor**:
+    ```bash
+    npx cap sync
+    ```
+
+3.  **Open in Native IDE**:
+    - For Android: `npx cap open android`
+    - For iOS: `npx cap open ios`
+
+4.  **Run/Build**: Use Android Studio or Xcode to build the final APK/IPA or run on a connected device.
+
+### AI Coach
+The mobile app includes an **AI Coach** feature powered by Google Gemini. To use it:
+- Go to **Athlete Settings**.
+- Enter your **Gemini API Key**.
+- Navigate to the **AI Coach** tab via the bottom navigation bar.
+- Configure your prompt and context window, then ask the coach for advice!
