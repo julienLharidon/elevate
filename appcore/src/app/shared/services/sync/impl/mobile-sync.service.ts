@@ -171,7 +171,8 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
     if (existing) return;
 
     const streams = await this.stravaConnector.fetchStreams(stravaBareActivity.id, info);
-    const activity = this.stravaConnector.computeActivity(stravaBareActivity, streams, resolver.resolve(new Date(stravaBareActivity.start_date)), userSettings);
+    const detail = await this.stravaConnector.fetchActivityDetail(stravaBareActivity.id, info);
+    const activity = this.stravaConnector.computeActivity(stravaBareActivity, detail, streams, resolver.resolve(new Date(stravaBareActivity.start_date)), userSettings);
 
     await this.activityService.put(activity);
 
