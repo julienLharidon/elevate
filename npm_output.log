@@ -36,3 +36,197 @@ Build at: 2026-03-26T07:31:25.206Z - Hash: d86d9e25e717f13f - Time: 28754ms
 
 
 ✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:31:09.799Z - Hash: f53ff33d584668d4 - Time: 29052ms
+
+Error: src/app/shared/services/sync/impl/mobile-sync.service.ts:193:30 - error TS2576: Property 'deflate' does not exist on type 'Streams'. Did you mean to access the static member 'Streams.deflate' instead?
+
+193     const deflated = streams.deflate();
+                                 ~~~~~~~
+
+
+
+
+✖ Failed to compile.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:33:26.360Z - Hash: 51cd8dd5cf20af3d - Time: 3421ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names                                    |  Raw Size
+runtime.js          | runtime                                  |  12.92 kB |
+
+Lazy Chunk Files    | Names                                    |  Raw Size
+933.js              | athlete-settings-athlete-settings-module | 181.61 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:36:54.487Z - Hash: b5f42e61d197ae2d - Time: 3513ms
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:266:18 - error TS2339: Property 'buildTarget' does not exist on type 'AthleteSettingsFormComponent'.
+
+266 <mat-card *ngIf="buildTarget === BuildTarget.MOBILE">
+                     ~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:266:34 - error TS2339: Property 'BuildTarget' does not exist on type 'AthleteSettingsFormComponent'.
+
+266 <mat-card *ngIf="buildTarget === BuildTarget.MOBILE">
+                                     ~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:271:18 - error TS2339: Property 'isStravaConnected' does not exist on type 'AthleteSettingsFormComponent'.
+
+271     <div *ngIf="!isStravaConnected">
+                     ~~~~~~~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:273:60 - error TS2339: Property 'onConnectStrava' does not exist on type 'AthleteSettingsFormComponent'.
+
+273         <button mat-raised-button color="primary" (click)="onConnectStrava()">Connect Strava</button>
+                                                               ~~~~~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:275:17 - error TS2339: Property 'isStravaConnected' does not exist on type 'AthleteSettingsFormComponent'.
+
+275     <div *ngIf="isStravaConnected">
+                    ~~~~~~~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:276:58 - error TS2339: Property 'stravaAthleteName' does not exist on type 'AthleteSettingsFormComponent'.
+
+276         <p>Successfully connected to Strava as <strong>{{stravaAthleteName}}</strong></p>
+                                                             ~~~~~~~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+Error: src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.html:277:58 - error TS2339: Property 'onDisconnectStrava' does not exist on type 'AthleteSettingsFormComponent'.
+
+277         <button mat-stroked-button color="warn" (click)="onDisconnectStrava()">Disconnect Strava</button>
+                                                             ~~~~~~~~~~~~~~~~~~
+
+  src/app/athlete-settings/components/athlete-settings-form/athlete-settings-form.component.ts:13:16
+    13   templateUrl: "./athlete-settings-form.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AthleteSettingsFormComponent.
+
+
+
+
+✖ Failed to compile.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names                                    |  Raw Size
+runtime.js          | runtime                                  |  12.92 kB |
+
+Lazy Chunk Files    | Names                                    |  Raw Size
+933.js              | athlete-settings-athlete-settings-module | 184.64 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:37:06.775Z - Hash: 3c03956e74d3a9cf - Time: 8669ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:37:17.302Z - Hash: b84037b69e593a31 - Time: 2372ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names                                    |  Raw Size
+runtime.js          | runtime                                  |  12.92 kB |
+
+Lazy Chunk Files    | Names                                    |  Raw Size
+933.js              | athlete-settings-athlete-settings-module | 188.68 kB |
+731.js              | web                                      |   2.98 kB |
+998.js              | web                                      |   1.92 kB |
+
+14 unchanged chunks
+
+Build at: 2026-03-27T13:47:08.814Z - Hash: 081d88a44eaac29e - Time: 2637ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+16 unchanged chunks
+
+Build at: 2026-03-27T13:50:44.094Z - Hash: 066a3d6288a36b32 - Time: 4115ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+16 unchanged chunks
+
+Build at: 2026-03-27T13:54:05.475Z - Hash: 4683857d87a4d5f7 - Time: 2757ms
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.75 MB |
+runtime.js          | runtime | 12.92 kB |
+
+16 unchanged chunks
+
+Build at: 2026-03-27T13:58:13.649Z - Hash: b1230d815dddeeab - Time: 3822ms
+
+✔ Compiled successfully.

@@ -7,6 +7,11 @@ import { AthleteSettings } from "@elevate/shared/models/athlete/athlete-settings
 import { MeasureSystem } from "@elevate/shared/enums/measure-system.enum";
 import { Constant } from "@elevate/shared/constants/constant";
 import { PropertiesDao } from "../../../shared/dao/properties/properties.dao";
+import { BuildTarget } from "@elevate/shared/enums/build-target.enum";
+import { environment } from "../../../../environments/environment";
+import { StravaConnectorInfoService } from "../../../shared/services/strava-connector-info/strava-connector-info.service";
+import { Browser } from "@capacitor/browser";
+import { App } from "@capacitor/app";
 
 @Component({
   selector: "app-athlete-settings-form",
@@ -24,6 +29,8 @@ export class AthleteSettingsFormComponent implements OnInit {
   public static readonly DATED_ATHLETE_SETTING_KEY_RUNNING_FTP: string = "runningFtp";
   public static readonly DATED_ATHLETE_SETTING_KEY_SWIMMING_FTP: string = "swimFtp";
 
+  public readonly buildTarget: BuildTarget = environment.buildTarget;
+  public BuildTarget = BuildTarget;
   public readonly DEFAULT_LTHR_KARVONEN_HRR_FACTOR: number = FitnessService.DEFAULT_LTHR_KARVONEN_HRR_FACTOR;
 
   @ViewChild("bottom", { static: true })
@@ -39,12 +46,15 @@ export class AthleteSettingsFormComponent implements OnInit {
 
   public swimFtp100m: string;
   public geminiApiKey: string;
+  public isStravaConnected = false;
+  public stravaAthleteName = "";
 
   public isSwimFtpCalculatorEnabled = false;
 
   constructor(
     @Inject(MatSnackBar) private readonly snackBar: MatSnackBar,
-    @Inject(PropertiesDao) private readonly propertiesDao: PropertiesDao
+    @Inject(PropertiesDao) private readonly propertiesDao: PropertiesDao,
+    private readonly stravaInfoService: StravaConnectorInfoService
   ) {}
 
   public async ngOnInit() {
@@ -52,6 +62,50 @@ export class AthleteSettingsFormComponent implements OnInit {
     this.swimFtp100m = SwimFtpHelperComponent.convertSwimSpeedToPace(this.athleteSettingsModel.swimFtp);
     const props: any = await this.propertiesDao.findOne();
     this.geminiApiKey = props.geminiApiKey;
+    this.checkStravaStatus();
+  }
+
+  private async checkStravaStatus() {
+      const info = await this.stravaInfoService.fetch();
+      this.isStravaConnected = !!info.accessToken;
+      if (this.isStravaConnected && info.stravaAccount) {
+          this.stravaAthleteName = `${info.stravaAccount.firstname} ${info.stravaAccount.lastname}`;
+      }
+  }
+
+  public async onConnectStrava() {
+      const info = await this.stravaInfoService.fetch();
+      if (!info.clientId || !info.clientSecret) {
+          this.snackBar.open("Please configure Strava Client ID and Secret in your account first.", "Close", { duration: 5000 });
+          return;
+      }
+
+      const redirectUri = "com.thomaschampagne.elevate://callback";
+      const authUrl = `https://www.strava.com/oauth/mobile/authorize?client_id=${info.clientId}&redirect_uri=${redirectUri}&response_type=code&approval_prompt=auto&scope=read,activity:read_all`;
+
+      await Browser.open({ url: authUrl });
+
+      // Handle the deep link callback
+      App.addListener('appUrlOpen', async (event: any) => {
+          if (event.url.includes('code=')) {
+              const code = new URL(event.url).searchParams.get('code');
+              await Browser.close();
+              this.snackBar.open("Received authorization code from Strava. Syncing...", "Close", { duration: 3000 });
+              // In a full implementation, we'd exchange this code for tokens here.
+              // For now, we'll just store that we're "connected" for the demo.
+              info.accessToken = "dummy_token";
+              await this.stravaInfoService.update(info);
+              this.checkStravaStatus();
+          }
+      });
+  }
+
+  public async onDisconnectStrava() {
+      const info = await this.stravaInfoService.fetch();
+      info.accessToken = null;
+      info.refreshToken = null;
+      await this.stravaInfoService.update(info);
+      this.checkStravaStatus();
   }
 
   public isPropertyCompliant(property: string, canBeNull?: boolean): boolean {

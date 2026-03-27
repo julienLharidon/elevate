@@ -13,6 +13,7 @@ import { VersionsProvider } from "../../services/versions/versions-provider";
 import { MobileVersionsProvider } from "../../services/versions/impl/mobile-versions-provider.service";
 import { SyncService } from "../../services/sync/sync.service";
 import { MobileSyncService } from "../../services/sync/impl/mobile-sync.service";
+import { MobileStravaConnector } from "../../services/sync/impl/mobile-strava-connector.service";
 import { StravaConnectorInfoService } from "../../services/strava-connector-info/strava-connector-info.service";
 import { StravaConnectorInfoDao } from "../../dao/strava-connector-info/strava-connector-info.dao";
 import { ConnectorSyncDateTimeDao } from "../../dao/sync/connector-sync-date-time.dao";
@@ -38,6 +39,7 @@ import { DesktopManualActivityDialogComponent } from "../../../desktop/manual-ac
     { provide: UserSettingsService, useClass: MobileUserSettingsService },
     { provide: ActivityService, useClass: MobileActivityService },
     { provide: VersionsProvider, useClass: MobileVersionsProvider },
+    MobileStravaConnector,
     { provide: SyncService, useClass: MobileSyncService }
   ]
 })

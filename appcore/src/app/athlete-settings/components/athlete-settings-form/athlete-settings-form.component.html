@@ -263,6 +263,22 @@
   </mat-card-content>
 </mat-card>
 
+<mat-card *ngIf="buildTarget === BuildTarget.MOBILE">
+  <mat-card-title>
+    Strava Connection
+  </mat-card-title>
+  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+    <div *ngIf="!isStravaConnected">
+        <p>Connect your Strava account to sync your activities automatically.</p>
+        <button mat-raised-button color="primary" (click)="onConnectStrava()">Connect Strava</button>
+    </div>
+    <div *ngIf="isStravaConnected">
+        <p>Successfully connected to Strava as <strong>{{stravaAthleteName}}</strong></p>
+        <button mat-stroked-button color="warn" (click)="onDisconnectStrava()">Disconnect Strava</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
 <mat-card>
   <mat-card-title>
     AI Coach Settings

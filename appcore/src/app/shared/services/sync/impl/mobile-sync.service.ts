@@ -24,6 +24,13 @@ import { CompleteSyncEvent } from "@elevate/shared/sync/events/complete-sync.eve
 import { UserSettings } from "@elevate/shared/models/user-settings/user-settings.namespace";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Http, HttpOptions } from "@capacitor-community/http";
+import { AthleteSnapshotResolver } from "@elevate/shared/resolvers/athlete-snapshot.resolver";
+import { ActivityComputer } from "@elevate/shared/sync/compute/activity-computer";
+import { Streams } from "@elevate/shared/models/activity-data/streams.model";
+import { ActivitySyncEvent } from "@elevate/shared/sync/events/activity-sync.event";
+import { DeflatedActivityStreams } from "@elevate/shared/models/sync/deflated-activity.streams";
+import _ from "lodash";
+import { MobileStravaConnector } from "./mobile-strava-connector.service";
 
 @Injectable()
 export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> implements OnDestroy {
@@ -41,6 +48,7 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
     @Inject(LoggerService) public readonly logger: LoggerService,
     @Inject(ConnectorSyncDateTimeDao) public readonly connectorSyncDateTimeDao: ConnectorSyncDateTimeDao,
     @Inject(StravaConnectorInfoService) public readonly stravaConnectorInfoService: StravaConnectorInfoService,
+    @Inject(MobileStravaConnector) private readonly stravaConnector: MobileStravaConnector,
     @Inject(MatSnackBar) private readonly snackBar: MatSnackBar,
     @Inject(Router) public readonly router: Router
   ) {
@@ -74,6 +82,15 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
 
       await this.performStravaSync(stravaConnectorInfo, athleteModel, userSettings, syncFromDateTime);
 
+      // Update sync time
+      let syncDateTime = await this.connectorSyncDateTimeDao.getById(ConnectorType.STRAVA);
+      if (syncDateTime) {
+        syncDateTime.syncDateTime = Date.now();
+      } else {
+        syncDateTime = new ConnectorSyncDateTime(ConnectorType.STRAVA, Date.now());
+      }
+      await this.connectorSyncDateTimeDao.put(syncDateTime);
+
       this.isSyncing$.next(false);
       this.syncEvents$.next(new CompleteSyncEvent(ConnectorType.STRAVA));
     } catch (error) {
@@ -98,6 +115,8 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
     const perPage = 30;
     let hasMore = true;
 
+    const resolver = new AthleteSnapshotResolver(athleteModel);
+
     while (hasMore && !this.stopRequested) {
       const activities = await this.fetchStravaActivities(info, page, perPage, syncFromDateTime);
       if (activities.length === 0) {
@@ -107,7 +126,7 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
 
       for (const stravaActivity of activities) {
         if (this.stopRequested) break;
-        await this.processStravaActivity(stravaActivity, info, athleteModel, userSettings);
+        await this.processStravaActivity(stravaActivity, info, resolver, userSettings);
       }
 
       page++;
@@ -139,23 +158,27 @@ export class MobileSyncService extends SyncService<ConnectorSyncDateTime[]> impl
   }
 
   private async fetchStravaActivities(info: StravaConnectorInfo, page: number, perPage: number, after: number): Promise<any[]> {
-    const afterParam = after ? `&after=${Math.floor(after / 1000)}` : '';
-    const options: HttpOptions = {
-      url: `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${perPage}${afterParam}`,
-      headers: { Authorization: `Bearer ${info.accessToken}` }
-    };
-    const response = await Http.get(options);
-    return response.data;
+    return this.stravaConnector.fetchActivities(info, page, perPage, after);
   }
 
   private async processStravaActivity(
     stravaBareActivity: any,
     info: StravaConnectorInfo,
-    athleteModel: AthleteModel,
+    resolver: AthleteSnapshotResolver,
     userSettings: UserSettings.BaseUserSettings
   ): Promise<void> {
     const existing = await this.activityService.getById(stravaBareActivity.id);
     if (existing) return;
+
+    const streams = await this.stravaConnector.fetchStreams(stravaBareActivity.id, info);
+    const activity = this.stravaConnector.computeActivity(stravaBareActivity, streams, resolver.resolve(new Date(stravaBareActivity.start_date)), userSettings);
+
+    await this.activityService.put(activity);
+
+    const deflated = Streams.deflate(streams);
+    await this.streamsService.put(new DeflatedActivityStreams(`${activity.id}`, deflated));
+
+    this.syncEvents$.next(new ActivitySyncEvent(ConnectorType.STRAVA, `Synced ${activity.name}`, activity, true, deflated));
   }
 
   public async stop(): Promise<void> {
