@@ -18,18 +18,13 @@ import { StravaConnectorInfoService } from "../../services/strava-connector-info
 import { StravaConnectorInfoDao } from "../../dao/strava-connector-info/strava-connector-info.dao";
 import { ConnectorSyncDateTimeDao } from "../../dao/sync/connector-sync-date-time.dao";
 import { PropertiesDao } from "../../dao/properties/properties.dao";
-import { DesktopBackupDialogComponent } from "../../dialogs/backups/desktop/desktop-backup-dialog.component";
-import { DesktopRestoreDialogComponent } from "../../dialogs/backups/desktop/desktop-restore-dialog.component";
-import { DesktopManualActivityDialogComponent } from "../../../desktop/manual-activity/desktop-manual-activity-dialog.component";
+import { OPEN_RESOURCE_RESOLVER } from "../../services/links-opener/open-resource-resolver";
 
 @NgModule({
   imports: [CoreModule, MobileRoutingModule],
   exports: [CoreModule, MobileRoutingModule],
-  declarations: [DesktopBackupDialogComponent, DesktopRestoreDialogComponent, DesktopManualActivityDialogComponent],
+  declarations: [],
   providers: [
-    { provide: "ElectronService", useValue: {} },
-    { provide: "DesktopSyncService", useValue: {} },
-    { provide: "DesktopBackupService", useValue: {} },
     StravaConnectorInfoService,
     StravaConnectorInfoDao,
     ConnectorSyncDateTimeDao,
@@ -39,6 +34,7 @@ import { DesktopManualActivityDialogComponent } from "../../../desktop/manual-ac
     { provide: UserSettingsService, useClass: MobileUserSettingsService },
     { provide: ActivityService, useClass: MobileActivityService },
     { provide: VersionsProvider, useClass: MobileVersionsProvider },
+    { provide: OPEN_RESOURCE_RESOLVER, useValue: { openLink: (url: string) => window.open(url, '_blank') } },
     MobileStravaConnector,
     { provide: SyncService, useClass: MobileSyncService }
   ]
