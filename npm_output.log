@@ -1,0 +1,904 @@
+Warning: Running a server with --disable-host-check is a security risk. See https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a for more information.
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names                                    |  Raw Size
+main.js               | main                                     |   9.75 MB |
+polyfills.js          | polyfills                                |   1.18 MB |
+scripts.js            | scripts                                  | 795.59 kB |
+styles.css, styles.js | styles                                   | 462.11 kB |
+runtime.js            | runtime                                  |  12.92 kB |
+
+| Initial Total                            |  12.17 MB
+
+Lazy Chunk Files      | Names                                    |  Raw Size
+447.js                | fitness-trend-fitness-trend-module       |   2.42 MB |
+213.js                | fitness-trend-fitness-trend-module       | 306.72 kB |
+51.js                 | year-progress-year-progress-module       | 280.42 kB |
+540.js                | activities-activities-module             | 217.62 kB |
+933.js                | athlete-settings-athlete-settings-module | 188.69 kB |
+389.js                | activities-activities-module             | 110.86 kB |
+125.js                | zones-settings-zones-settings-module     |  87.85 kB |
+11.js                 | fitness-trend-fitness-trend-module       |  36.14 kB |
+114.js                | web                                      |  25.24 kB |
+575.js                | web                                      |  23.82 kB |
+797.js                | ai-coach-ai-coach-module                 |  20.05 kB |
+731.js                | web                                      |   2.98 kB |
+998.js                | web                                      |   1.92 kB |
+
+Build at: 2026-03-27T17:58:54.244Z - Hash: 8447f3f99bfaa4f5 - Time: 29078ms
+
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names   | Raw Size
+main.js             | main    |  9.74 MB |
+runtime.js          | runtime | 12.92 kB |
+
+16 unchanged chunks
+
+Build at: 2026-03-27T18:14:11.661Z - Hash: 86100bf7dec15c01 - Time: 9321ms
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:2:39 - error NG8003: No directive found with exportAs 'ngForm'.
+
+2 <form *ngIf="activity" #activityForm="ngForm">
+                                        ~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:3:3 - error NG8001: 'mat-dialog-content' is not a known element:
+1. If 'mat-dialog-content' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+3   <mat-dialog-content class="mat-body-1">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:5:7 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+5       <mat-form-field fxFlex="50">
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:6:9 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+6         <mat-label>Name</mat-label>
+          ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:7:25 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+7         <input matInput [(ngModel)]="activity.name" name="name" required>
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:10:7 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+10       <mat-form-field fxFlex="49">
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:11:9 - error NG8001: 'mat-select' is not a known element:
+1. If 'mat-select' is an Angular component, then verify that it is part of this module.
+2. If 'mat-select' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+ 11         <mat-select (selectionChange)="refreshSportsState()"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 12                     [(ngModel)]="activity.type"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+...
+ 15                     name="sports"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 16                     required>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:12:21 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'mat-select'.
+1. If 'mat-select' is an Angular component and it has 'ngModel' input, then verify that it is part of this module.
+2. If 'mat-select' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+12                     [(ngModel)]="activity.type"
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:18:11 - error NG8001: 'mat-optgroup' is not a known element:
+1. If 'mat-optgroup' is an Angular component, then verify that it is part of this module.
+2. If 'mat-optgroup' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+18           <mat-optgroup *ngFor="let sportCategory of elevateSportCategories;"
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+19                         [label]="sportCategory.label">
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:19:25 - error NG8002: Can't bind to 'label' since it isn't a known property of 'mat-optgroup'.
+1. If 'mat-optgroup' is an Angular component and it has 'label' input, then verify that it is part of this module.
+2. If 'mat-optgroup' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+19                         [label]="sportCategory.label">
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:21:13 - error NG8001: 'mat-option' is not a known element:
+1. If 'mat-option' is an Angular component, then verify that it is part of this module.
+2. If 'mat-option' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+21             <mat-option *ngFor="let sport of sportCategory.sportKeys;" [value]="sport">{{startCase(sport)}}</mat-option>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:21:72 - error NG8002: Can't bind to 'value' since it isn't a known property of 'mat-option'.
+1. If 'mat-option' is an Angular component and it has 'value' input, then verify that it is part of this module.
+2. If 'mat-option' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+21             <mat-option *ngFor="let sport of sportCategory.sportKeys;" [value]="sport">{{startCase(sport)}}</mat-option>
+                                                                          ~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:31:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+31           <mat-form-field fxFlex="33">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:32:20 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+32             <input [(ngModel)]="startDate"
+                      ~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:33:20 - error NG8002: Can't bind to 'matDatepicker' since it isn't a known property of 'input'.
+
+33                    [matDatepicker]="datePickerFrom"
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:39:13 - error NG8001: 'mat-datepicker-toggle' is not a known element:
+1. If 'mat-datepicker-toggle' is an Angular component, then verify that it is part of this module.
+2. If 'mat-datepicker-toggle' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+39             <mat-datepicker-toggle [for]="datePickerFrom" matSuffix></mat-datepicker-toggle>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:39:36 - error NG8002: Can't bind to 'htmlFor' since it isn't a known property of 'mat-datepicker-toggle'.
+1. If 'mat-datepicker-toggle' is an Angular component and it has 'htmlFor' input, then verify that it is part of this module.
+2. If 'mat-datepicker-toggle' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+39             <mat-datepicker-toggle [for]="datePickerFrom" matSuffix></mat-datepicker-toggle>
+                                      ~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:40:13 - error NG8001: 'mat-datepicker' is not a known element:
+1. If 'mat-datepicker' is an Angular component, then verify that it is part of this module.
+2. If 'mat-datepicker' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+40             <mat-datepicker #datePickerFrom></mat-datepicker>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:43:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+43           <mat-form-field fxFlex="33">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:44:13 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+44             <mat-label>Hours (24h)</mat-label>
+               ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:45:29 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+45             <input matInput [(ngModel)]="startHours" min="0" max="23" name="startHours" type="number" required>
+                               ~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:48:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+48           <mat-form-field fxFlex="33">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:49:13 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+49             <mat-label>Minutes</mat-label>
+               ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:50:29 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+50             <input matInput [(ngModel)]="startMinutes" min="0" max="59" name="startMinutes" type="number" required>
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:58:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+58           <mat-form-field fxFlex="33">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:59:13 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+59             <mat-label>Hours</mat-label>
+               ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:60:29 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+60             <input matInput [(ngModel)]="durationHours" min="0" name="durationHours" type="number" required>
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:63:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+63           <mat-form-field fxFlex="33">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:64:13 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+64             <mat-label>Minutes</mat-label>
+               ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:65:29 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+65             <input matInput [(ngModel)]="durationMinutes" min="0" max="59" name="durationMinutes" type="number"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:69:11 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+69           <mat-form-field fxFlex="32">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:70:13 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+70             <mat-label>Seconds</mat-label>
+               ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:71:29 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+71             <input matInput [(ngModel)]="durationSeconds" min="0" max="59" name="durationSeconds" type="number"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:78:7 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+78       <mat-form-field fxFlex="50">
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:79:9 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+79         <mat-label *ngIf="measureSystem === MeasureSystem.METRIC">Distance in kilometers (optional)</mat-label>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:80:9 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+80         <mat-label *ngIf="measureSystem === MeasureSystem.IMPERIAL">Distance in miles (optional)</mat-label>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:81:25 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+81         <input matInput [(ngModel)]="activity.stats.distance" min="0" name="distance" type="number">
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:84:7 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+84       <mat-form-field fxFlex="49">
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:85:9 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+85         <mat-label *ngIf="measureSystem === MeasureSystem.METRIC">Elevation gain in meters (optional)</mat-label>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:86:9 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+86         <mat-label *ngIf="measureSystem === MeasureSystem.IMPERIAL">Elevation gain in feet (optional)</mat-label>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:87:25 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+87         <input matInput [(ngModel)]="activity.stats.elevationGain" min="0" name="elevationGain" type="number">
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:90:5 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+90     <mat-form-field fxFill>
+       ~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:91:7 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+91       <mat-label>Heart Rate Stress Score (optional)</mat-label>
+         ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:92:23 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+92       <input matInput [(ngModel)]="activity.stats.scores.stress.hrss" min="0" name="hrss" type="number">
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:94:5 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+94     <mat-form-field fxFill *ngIf="isRun">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:95:7 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+95       <mat-label>Running Stress Score (optional) **</mat-label>
+         ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:96:23 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+96       <input matInput [(ngModel)]="activity.stats.scores.stress.rss" min="0" name="rss" type="number">
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:98:5 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+98     <mat-form-field fxFill *ngIf="isRide || isRun">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:99:7 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+99       <mat-label>Power Stress Score (optional) **</mat-label>
+         ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:100:23 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+100       <input matInput [(ngModel)]="activity.stats.scores.stress.pss" min="0" name="pss" type="number">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:102:5 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+102     <mat-form-field fxFill *ngIf="isSwim">
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:103:7 - error NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+103       <mat-label>Swimming Stress Score (optional) **</mat-label>
+          ~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:104:23 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+104       <input matInput [(ngModel)]="activity.stats.scores.stress.sss" min="0" name="sss" type="number">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:107:7 - error NG8001: 'mat-checkbox' is not a known element:
+1. If 'mat-checkbox' is an Angular component, then verify that it is part of this module.
+2. If 'mat-checkbox' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+107       <mat-checkbox [(ngModel)]="activity.trainer" name="trainer">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:107:21 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.
+1. If 'mat-checkbox' is an Angular component and it has 'ngModel' input, then verify that it is part of this module.
+2. If 'mat-checkbox' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+107       <mat-checkbox [(ngModel)]="activity.trainer" name="trainer">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:112:7 - error NG8001: 'mat-checkbox' is not a known element:
+1. If 'mat-checkbox' is an Angular component, then verify that it is part of this module.
+2. If 'mat-checkbox' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+112       <mat-checkbox [(ngModel)]="activity.isSwimPool" name="isSwimPool">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:112:21 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.
+1. If 'mat-checkbox' is an Angular component and it has 'ngModel' input, then verify that it is part of this module.
+2. If 'mat-checkbox' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+112       <mat-checkbox [(ngModel)]="activity.isSwimPool" name="isSwimPool">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.html:120:3 - error NG8001: 'mat-dialog-actions' is not a known element:
+1. If 'mat-dialog-actions' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-actions' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+120   <mat-dialog-actions>
+      ~~~~~~~~~~~~~~~~~~~~
+
+  src/app/desktop/manual-activity/desktop-manual-activity-dialog.component.ts:18:16
+    18   templateUrl: "./desktop-manual-activity-dialog.component.html",
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component DesktopManualActivityDialogComponent.
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:14:5 - error NG8001: 'mat-dialog-content' is not a known element:
+1. If 'mat-dialog-content' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+14     <mat-dialog-content class="mat-body-1">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:28:9 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+28         <mat-form-field fxFill>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:30:13 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+30             [(ngModel)]="outputDirectory"
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:46:13 - error NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+46             <mat-icon fontSet="material-icons-outlined">gps_fixed</mat-icon>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:55:13 - error NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+55             <mat-icon fontSet="material-icons-outlined">folder_open</mat-icon>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:64:9 - error NG8001: 'mat-progress-bar' is not a known element:
+1. If 'mat-progress-bar' is an Angular component, then verify that it is part of this module.
+2. If 'mat-progress-bar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+64         <mat-progress-bar mode="determinate" [value]="backupProgress"></mat-progress-bar>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:64:46 - error NG8002: Can't bind to 'value' since it isn't a known property of 'mat-progress-bar'.
+1. If 'mat-progress-bar' is an Angular component and it has 'value' input, then verify that it is part of this module.
+2. If 'mat-progress-bar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+64         <mat-progress-bar mode="determinate" [value]="backupProgress"></mat-progress-bar>
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-backup-dialog.component.ts:71:5 - error NG8001: 'mat-dialog-actions' is not a known element:
+1. If 'mat-dialog-actions' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-actions' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+71     <mat-dialog-actions *ngIf="!isBackupProcessing">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:13:5 - error NG8001: 'mat-dialog-content' is not a known element:
+1. If 'mat-dialog-content' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+13     <mat-dialog-content class="mat-body-1">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:17:9 - error NG8001: 'mat-form-field' is not a known element:
+1. If 'mat-form-field' is an Angular component, then verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+17         <mat-form-field fxFill>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:19:13 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+19             [(ngModel)]="backupFilePath"
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:34:13 - error NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+34             <mat-icon fontSet="material-icons-outlined">insert_drive_file</mat-icon>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:43:9 - error NG8001: 'mat-progress-bar' is not a known element:
+1. If 'mat-progress-bar' is an Angular component, then verify that it is part of this module.
+2. If 'mat-progress-bar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+43         <mat-progress-bar mode="determinate" [value]="restoreProgress"></mat-progress-bar>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:43:46 - error NG8002: Can't bind to 'value' since it isn't a known property of 'mat-progress-bar'.
+1. If 'mat-progress-bar' is an Angular component and it has 'value' input, then verify that it is part of this module.
+2. If 'mat-progress-bar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+43         <mat-progress-bar mode="determinate" [value]="restoreProgress"></mat-progress-bar>
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/shared/dialogs/backups/desktop/desktop-restore-dialog.component.ts:50:5 - error NG8001: 'mat-dialog-actions' is not a known element:
+1. If 'mat-dialog-actions' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-actions' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+50     <mat-dialog-actions *ngIf="!isRestoreProcessing">
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+✖ Failed to compile.

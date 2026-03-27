@@ -262,3 +262,39 @@
 
   </mat-card-content>
 </mat-card>
+
+<mat-card *ngIf="buildTarget === BuildTarget.MOBILE">
+  <mat-card-title>
+    Strava Connection
+  </mat-card-title>
+  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+    <div *ngIf="!isStravaConnected">
+        <p>Connect your Strava account to sync your activities automatically.</p>
+        <button mat-raised-button color="primary" (click)="onConnectStrava()">Connect Strava</button>
+    </div>
+    <div *ngIf="isStravaConnected">
+        <p>Successfully connected to Strava as <strong>{{stravaAthleteName}}</strong></p>
+        <button mat-stroked-button color="warn" (click)="onDisconnectStrava()">Disconnect Strava</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>
+    AI Coach Settings
+  </mat-card-title>
+  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+    <mat-form-field fxFill appearance="outline">
+      <mat-label>Gemini API Key</mat-label>
+      <input
+        (change)="onGeminiApiKeyChanged()"
+        [(ngModel)]="geminiApiKey"
+        matInput
+        placeholder="Enter your Gemini API Key"
+        type="password"/>
+    </mat-form-field>
+    <div class="hint">
+      You can get an API key from the <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>.
+    </div>
+  </mat-card-content>
+</mat-card>
