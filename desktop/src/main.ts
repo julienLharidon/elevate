@@ -24,6 +24,7 @@ import { IpcProfileBackupListener } from "./listeners/ipc-profile-backup.listene
 import { Logger } from "./logger";
 import { UpdateHandler } from "./updates/update-handler";
 import { IpcSharedStorageListener } from "./listeners/ipc-shared-storage.listener";
+import { IpcAiCoachListener } from "./listeners/ipc-ai-coach.listener";
 import { IpcStorageService } from "./ipc-storage-service";
 import { HttpClient } from "./clients/http.client";
 import { EnvironmentToken } from "./environments/environment.interface";
@@ -60,6 +61,7 @@ class Main {
     @inject(IpcStravaLinkListener) private readonly ipcStravaLinkListener: IpcStravaLinkListener,
     @inject(IpcProfileBackupListener) private readonly ipcProfileBackupListener: IpcProfileBackupListener,
     @inject(IpcSharedStorageListener) private readonly ipcSharedStorageListener: IpcSharedStorageListener,
+    @inject(IpcAiCoachListener) private readonly ipcAiCoachListener: IpcAiCoachListener,
     @inject(IpcStorageService) private readonly ipcStorage: IpcStorageService,
     @inject(HttpClient) private readonly httpClient: HttpClient,
     @inject(Logger) private readonly logger: Logger
@@ -469,6 +471,9 @@ class Main {
 
     // Listen for shared storage requests
     this.ipcSharedStorageListener.startListening(this.ipcTunnelService);
+
+    // Listen for AI Coach requests
+    this.ipcAiCoachListener.startListening(this.ipcTunnelService);
 
     // Listen for check remote update requests
     this.updateHandler.startListening(this.ipcTunnelService);

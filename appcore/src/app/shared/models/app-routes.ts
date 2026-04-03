@@ -1,5 +1,6 @@
 export class AppRoutes {
   // Shared
+  public static readonly aiCoach: string = "aiCoach";
   public static readonly activities: string = "activities";
   public static readonly fitnessTrend: string = "fitnessTrend";
   public static readonly yearProgressions: string = "yearProgressions";
