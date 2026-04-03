@@ -8,8 +8,6 @@ import { OptionHelperReaderService } from "../global-settings/services/option-he
 import { AboutDialogComponent } from "../about-dialog/about-dialog.component";
 import { SideNavService } from "./services/side-nav/side-nav.service";
 import { CoreModule } from "../core/core.module";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { BrowserModule } from "@angular/platform-browser";
 import { AthleteSnapshotResolverService } from "./services/athlete-snapshot-resolver/athlete-snapshot-resolver.service";
 import { AthleteDao } from "./dao/athlete/athlete.dao";
 import { ActivityDao } from "./dao/activity/activity.dao";
@@ -25,8 +23,8 @@ import { TargetModule } from "./modules/target/target.module";
 import { ComponentsFactoryService } from "./services/components-factory.service";
 
 @NgModule({
-  imports: [CoreModule, BrowserModule, BrowserAnimationsModule, TargetModule],
-  exports: [CoreModule, BrowserModule, BrowserAnimationsModule, TargetModule],
+  imports: [CoreModule, TargetModule],
+  exports: [CoreModule, TargetModule],
   declarations: [
     // Dialogs
     LoadingDialogComponent,

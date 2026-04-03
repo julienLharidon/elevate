@@ -1,4 +1,6 @@
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
 import { SyncMenuDirective } from "./sync-menu/sync-menu.directive";
@@ -12,6 +14,7 @@ import { UpdateBarDirective } from "./update-bar/update-bar.directive";
 import { SplashScreenDirective } from "./app-load/splash-screen.directive";
 
 @NgModule({
+  imports: [BrowserModule, BrowserAnimationsModule, SharedModule, TargetBootModule],
   declarations: [
     AppLoadComponent,
     AppComponent,
@@ -23,7 +26,6 @@ import { SplashScreenDirective } from "./app-load/splash-screen.directive";
     SyncMenuDirective,
     AppMoreMenuDirective
   ],
-  imports: [SharedModule, TargetBootModule],
   providers: [],
   bootstrap: [AppLoadComponent]
 })

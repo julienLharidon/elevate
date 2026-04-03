@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AiCoachComponent } from "./ai-coach.component";
-import { CoreModule } from "../core/core.module";
+import { SharedModule } from "../shared/shared.module";
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CoreModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes)],
   declarations: [AiCoachComponent]
 })
 export class AiCoachModule {}
