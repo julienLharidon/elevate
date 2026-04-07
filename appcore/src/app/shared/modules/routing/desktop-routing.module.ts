@@ -4,6 +4,10 @@ import { AppRoutes } from "../../models/app-routes";
 
 const routes: Routes = [
   {
+    path: AppRoutes.aiCoach,
+    loadChildren: () => import("../../../ai-coach/ai-coach.module").then(module => module.AiCoachModule)
+  },
+  {
     path: AppRoutes.goals,
     loadChildren: () => import("../../../desktop/goals/goals.module").then(module => module.GoalsModule)
   },

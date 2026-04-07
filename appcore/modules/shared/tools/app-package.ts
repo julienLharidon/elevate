@@ -10,7 +10,7 @@ export class AppPackage {
   }
 
   public static getAuthorWebSite(): string {
-    return packageInfo.author.web;
+    return (packageInfo.author as any).web;
   }
 
   public static getElevateWebSite(): string {

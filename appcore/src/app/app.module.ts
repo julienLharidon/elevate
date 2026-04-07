@@ -12,6 +12,7 @@ import { UpdateBarDirective } from "./update-bar/update-bar.directive";
 import { SplashScreenDirective } from "./app-load/splash-screen.directive";
 
 @NgModule({
+  imports: [SharedModule, TargetBootModule],
   declarations: [
     AppLoadComponent,
     AppComponent,
@@ -23,7 +24,6 @@ import { SplashScreenDirective } from "./app-load/splash-screen.directive";
     SyncMenuDirective,
     AppMoreMenuDirective
   ],
-  imports: [SharedModule, TargetBootModule],
   providers: [],
   bootstrap: [AppLoadComponent]
 })

@@ -1,0 +1,41 @@
+<div class="ai-coach-container" fxLayout="column" fxLayoutGap="20px">
+  <h1>AI Coach</h1>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <mat-form-field appearance="fill" fxFlex="40">
+      <mat-label>API Key (Gemini)</mat-label>
+      <input matInput type="password" [(ngModel)]="apiKey" placeholder="Enter your Gemini API key">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="30">
+      <mat-label>Gemini Model</mat-label>
+      <mat-select [(ngModel)]="selectedModel">
+        <mat-option *ngFor="let model of models" [value]="model">{{ model }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="30">
+      <mat-label>History (Weeks)</mat-label>
+      <mat-select [(ngModel)]="weeksBack">
+        <mat-option *ngFor="let w of [2,3,4,5,6,7,8]" [value]="w">{{ w }} weeks</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Coach Instructions</mat-label>
+    <textarea matInput rows="5" [(ngModel)]="instructions" placeholder="e.g., 'You are a cycling coach. Analyze my last weeks and suggest training improvements.'"></textarea>
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <button mat-raised-button color="primary" [disabled]="loading || !apiKey" (click)="tellMeCoach()">
+      Tell me? Coach
+    </button>
+    <mat-spinner *ngIf="loading" diameter="30"></mat-spinner>
+  </div>
+
+  <div *ngIf="response" class="response-container">
+    <h2>Coach's Feedback</h2>
+    <div class="response-content">{{ response }}</div>
+  </div>
+</div>

@@ -50,5 +50,6 @@ export enum Channel {
   // Others
   ipcStorage = "ipcStorage",
   stravaLink = "stravaLink",
-  runtimeInfo = "runtimeInfo"
+  runtimeInfo = "runtimeInfo",
+  getAiCoachResponse = "getAiCoachResponse"
 }
