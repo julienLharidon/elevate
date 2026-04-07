@@ -16,6 +16,10 @@ class SyncWorker @AssistedInject constructor(
     private val activityRepository: ActivityRepository
 ) : CoroutineWorker(context, params) {
 
+    companion object {
+        const val WORK_NAME = "SyncActivitiesWork"
+    }
+
     override suspend fun doWork(): Result {
         return try {
             activityRepository.syncActivities()

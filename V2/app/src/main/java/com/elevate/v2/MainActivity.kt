@@ -9,6 +9,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    // Note: To see simulated activities in the UI for demo purposes,
+    // you would need to import them into the Room database.
+    // In dev mode, the list is empty by default to allow fresh sync.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

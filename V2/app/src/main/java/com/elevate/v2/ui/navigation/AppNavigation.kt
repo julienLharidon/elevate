@@ -56,7 +56,10 @@ fun AppNavigation() {
             composable(Screen.FitnessTrend.route) { FitnessTrendScreen() }
             composable(Screen.YearProgression.route) { YearProgressionScreen() }
             composable(Screen.Connectors.route) { ConnectorsScreen() }
-            composable(Screen.AthleteSettings.route) { AthleteSettingsScreen() }
+            composable(Screen.AthleteSettings.route) {
+                AthleteSettingsScreen(onZonesClick = { navController.navigate(Screen.ZonesSettings.route) })
+            }
+            composable(Screen.ZonesSettings.route) { ZonesSettingsScreen() }
         }
     }
 }

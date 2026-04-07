@@ -3,9 +3,13 @@ package com.elevate.v2.ui.fitness
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.elevate.v2.ui.fitness.viewmodel.FitnessTrendViewModel
 import com.elevate.v2.ui.theme.ATLColor
 import com.elevate.v2.ui.theme.CTLColor
 import com.elevate.v2.ui.theme.TSBColor
@@ -14,18 +18,30 @@ import com.patrykandpatrick.vico.compose.axis.vertical.rememberStartAxis
 import com.patrykandpatrick.vico.compose.chart.Chart
 import com.patrykandpatrick.vico.compose.chart.line.lineChart
 import com.patrykandpatrick.vico.compose.style.currentChartStyle
+import com.patrykandpatrick.vico.core.entry.entriesOf
 import com.patrykandpatrick.vico.core.entry.entryModelOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FitnessTrendScreen() {
-    val chartEntryModel = remember {
-        // Dummy data for CTL, ATL, TSB
-        entryModelOf(
-            listOf(10, 20, 15, 30, 25, 40), // CTL
-            listOf(5, 15, 10, 25, 20, 35),  // ATL
-            listOf(5, 5, 5, 5, 5, 5)        // TSB
-        )
+fun FitnessTrendScreen(
+    viewModel: FitnessTrendViewModel = hiltViewModel()
+) {
+    val fitnessTrend by viewModel.fitnessTrend.collectAsState()
+
+    val chartEntryModel = remember(fitnessTrend) {
+        if (fitnessTrend.isEmpty()) {
+            entryModelOf(
+                entriesOf(10f, 20f, 15f, 30f, 25f, 40f), // Demo data if empty
+                entriesOf(5f, 15f, 10f, 25f, 20f, 35f),
+                entriesOf(5f, 5f, 5f, 5f, 5f, 5f)
+            )
+        } else {
+            entryModelOf(
+                entriesOf(*fitnessTrend.map { it.ctl }.toTypedArray()),
+                entriesOf(*fitnessTrend.map { it.atl }.toTypedArray()),
+                entriesOf(*fitnessTrend.map { it.tsb }.toTypedArray())
+            )
+        }
     }
 
     Scaffold(

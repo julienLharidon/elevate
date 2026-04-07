@@ -22,6 +22,8 @@ class FitnessTrendViewModel @Inject constructor(
     init {
         activityRepository.getAllActivities()
             .onEach { activities ->
+                // Filter out simulated test data in dev/release versions if desired,
+                // but here we just ensure we have real data flow.
                 val activitiesByDate = activities.associate {
                     val cal = Calendar.getInstance()
                     cal.timeInMillis = it.startTime

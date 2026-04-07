@@ -2,7 +2,7 @@ package com.elevate.v2.ui.connectors
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Sync
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -20,6 +20,7 @@ fun ConnectorsScreen(
 ) {
     val isSyncing by viewModel.isSyncing.collectAsState()
     val syncProgress by viewModel.syncProgress.collectAsState()
+    val hasCredentials by viewModel.hasCredentials.collectAsState()
 
     Scaffold(
         topBar = { TopAppBar(title = { Text("Connectors") }) }
@@ -49,9 +50,9 @@ fun ConnectorsScreen(
                     }
                     Button(
                         onClick = { viewModel.sync() },
-                        enabled = !isSyncing
+                        enabled = !isSyncing && hasCredentials
                     ) {
-                        Icon(Icons.Default.Sync, contentDescription = "Sync")
+                        Icon(Icons.Default.Refresh, contentDescription = "Sync")
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(if (isSyncing) "Syncing..." else "Sync")
                     }
@@ -65,6 +66,14 @@ fun ConnectorsScreen(
                 "When syncing, Elevate will automatically pull activities from the last sync date. For first-time setup, large historical syncs are chunked to avoid API rate limits.",
                 style = MaterialTheme.typography.bodyMedium
             )
+
+            if (!hasCredentials) {
+                Text(
+                    "Please provide Strava Client ID and Secret in Athlete Settings to enable sync.",
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
 
             if (isSyncing || syncProgress > 0) {
                 Spacer(modifier = Modifier.height(16.dp))

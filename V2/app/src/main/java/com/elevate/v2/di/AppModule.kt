@@ -34,6 +34,9 @@ object AppModule {
     fun provideActivityDao(db: ElevateDatabase): ActivityDao = db.activityDao()
 
     @Provides
+    fun provideAthleteDao(db: ElevateDatabase): AthleteDao = db.athleteDao()
+
+    @Provides
     @Singleton
     fun provideStravaApi(): StravaApi {
         return Retrofit.Builder()
