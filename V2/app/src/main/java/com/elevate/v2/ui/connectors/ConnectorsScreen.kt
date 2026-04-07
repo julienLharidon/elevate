@@ -5,13 +5,22 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Sync
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.elevate.v2.ui.connectors.viewmodel.ConnectorsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ConnectorsScreen() {
+fun ConnectorsScreen(
+    viewModel: ConnectorsViewModel = hiltViewModel()
+) {
+    val isSyncing by viewModel.isSyncing.collectAsState()
+    val syncProgress by viewModel.syncProgress.collectAsState()
+
     Scaffold(
         topBar = { TopAppBar(title = { Text("Connectors") }) }
     ) { padding ->
@@ -38,10 +47,13 @@ fun ConnectorsScreen() {
                         Text("Status: Connected", style = MaterialTheme.typography.bodyMedium)
                         Text("Last Sync: 2 hours ago", style = MaterialTheme.typography.labelSmall)
                     }
-                    Button(onClick = {}) {
+                    Button(
+                        onClick = { viewModel.sync() },
+                        enabled = !isSyncing
+                    ) {
                         Icon(Icons.Default.Sync, contentDescription = "Sync")
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Sync")
+                        Text(if (isSyncing) "Syncing..." else "Sync")
                     }
                 }
             }
@@ -54,12 +66,14 @@ fun ConnectorsScreen() {
                 style = MaterialTheme.typography.bodyMedium
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
-            LinearProgressIndicator(
-                progress = { 0.45f },
-                modifier = Modifier.fillMaxWidth(),
-            )
-            Text("45% complete", style = MaterialTheme.typography.labelSmall)
+            if (isSyncing || syncProgress > 0) {
+                Spacer(modifier = Modifier.height(16.dp))
+                LinearProgressIndicator(
+                    progress = { syncProgress },
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Text("${(syncProgress * 100).toInt()}% complete", style = MaterialTheme.typography.labelSmall)
+            }
         }
     }
 }
