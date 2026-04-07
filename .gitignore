@@ -6,3 +6,10 @@
 
 # OS
 .DS_Store
+
+# Android V2
+V2/.gradle/
+V2/build/
+V2/app/build/
+V2/local.properties
+V2/*.apk
